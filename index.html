@@ -238,7 +238,7 @@
 <p>介绍了width之后，我们还可以照猫画虎的实现很多方法，例如height，left，right，bottom，head等等。</p>
 <p><strong>2.safe判断</strong><br>有时会遇到这样的情况，自己生成的或者服务器返回的数据类型不正确，造成app崩溃。所以这些经验告诉我们，做一些数据格式的判断还是有必要的。</p>
 <blockquote>
-<p>   -(BOOL)isValidString:(NSString <em>)aString;<br>-(BOOL)isValidArray:(NSArray </em>)aArray;<br>-(BOOL)isValidDictionary:(NSDictionary <em>)aDictionary;<br>-(BOOL)isValidInteger:(NSInteger)count;<br>-(BOOL)isValidDistance:(NSString </em>)aDistance;<br>-(BOOL)isValidTime:(NSString *)aTime;<br>-(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</p>
+<p>   -(BOOL)isValidString:(NSString <em>)aString;<br>-(BOOL)isValidArray:(NSString </em>)aArray;<br>-(BOOL)isValidDictionary:(NSDictionary <em>)aDictionary;<br>-(BOOL)isValidInteger:(NSInteger)count;<br>-(BOOL)isValidDistance:((NSString </em>)aDistance;<br>-(BOOL)isValidTime:(NSString *)aTime;<br>-(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</p>
 </blockquote>
 <p><strong>3.关于各式各样Alert View</strong></p>
 <p>Alert View作为端的友好提示是程序中不可获取的一小部分，根据不同的提示场景，Alert View肯定会有不同，至少分为成功提示、错误提示、二次确认提示等等。Alert View大部分都是custom出来的，分为title、icon、content、cancel title、other title等等。所以我们可以封装一个custom alert view，将alert view的显示动画、消失动画定义出来，但是它的title、content等等留给调用它的类决定，再定义一个枚举方法，定义我们业务所需的各种各样的view样式，在custom alert类中，根据样式来显示不同的image。基本想法就是这些了，看看是怎么实现的。</p>
@@ -249,17 +249,12 @@
 </ul>
 <p>万事具备，只差调用，再h文件中写个调用的接口</p>
 <blockquote>
-<p>-(void)showAlertWithTitle:(NSString <em>)title message:(NSString </em>)message defaultMessage:(NSString <em>)message completion:(CompletionBlock)completion cancelTitle:(NSString </em>) otherTitles:(NSString *)otherTitle;</p>
+<p>-(void)showAlertWithTitle:(NSString <em>)title message:(NSString </em>)message defaultMessage:(NSString <em>)message completion:(CompletionBlock)completion cancelTitle:(NSString </em>)otherTitles:(NSString *)otherTitle;</p>
 </blockquote>
 <p>这里，我多写了一个default message，其中message是网络请求之后，接口返回的message显示数据，如果接口返回失败，则使用default message。</p>
 <p><strong>4.table view翻页功能</strong><br>基本任何app中都会遇到翻页需求，翻页就是给后台传基本参数外，还要传入当前请求页数和请求的条数。请求条数基本是个定值，但是页数是增加的，这也是有规律可循的，所以封装个方法配好翻页参数。<br>这个翻页的类要完成几个方法：上拉刷新、下拉加载更多和加载失败时的处理。</p>
 <blockquote>
-<p>-(void)pullDownRefreshHandler:…</p>
-<ul>
-<li>(void)loadMoreHandler:…</li>
-<li>(void)finishRefreshWithError:(NSError *)error;</li>
-<li>(void)finishLoadMoreWithError;</li>
-</ul>
+<p>-(void)pullDownRefreshHandler:…<br>-(void)loadMoreHandler:…<br>-(void)finishRefreshWithError:(NSError *)error;<br>-(void)finishLoadMoreWithError;</p>
 </blockquote>
 <p>将翻页的功能交给这个类实现，不在请求中具体传入关于翻页的数据。<br><strong>5.网络请求封装</strong><br>大部分HTTP网络请求都是使用的AFNetwork吧，AF实在太好用，但是我们的需求是很多地方都要网络请求，在对AF进行一次封装太有必要。</p>
 <ul>
