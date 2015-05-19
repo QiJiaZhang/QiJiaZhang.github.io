@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>项目分享 | Hi iOS</title>
+  <title>封装思想，抽象一切 | Hi iOS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是小王爷的第一篇博客，首先简单的介绍一下我自己(此处有掌声)。我是一个iOS开发女攻城师。iOS编程大师和郭德纲都是我得男神(哈哈~)。有近4年iOS开发经验，现在在一家引以为豪的打车软件公司工作。我开通了微信公共账号，可以加我哦~如果有任何问题也可以给我发邮件到jack_gxy@126.com。欢迎进入iOS开发世界~
-我的项目经验我做过大大小小的App，上线的有7、8个了，我也是从一个小白慢">
+  <meta name="description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
+如何封装，怎样调用。废话少说，先看看我都封装了什么。
+1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
 <meta property="og:type" content="article">
-<meta property="og:title" content="项目分享">
-<meta property="og:url" content="http://blog.hiios.net/2015/04/02/项目分享/index.html">
+<meta property="og:title" content="封装思想，抽象一切">
+<meta property="og:url" content="http://blog.hiios.net/2015/05/19/封装、抽象/index.html">
 <meta property="og:site_name" content="Hi iOS">
-<meta property="og:description" content="这是小王爷的第一篇博客，首先简单的介绍一下我自己(此处有掌声)。我是一个iOS开发女攻城师。iOS编程大师和郭德纲都是我得男神(哈哈~)。有近4年iOS开发经验，现在在一家引以为豪的打车软件公司工作。我开通了微信公共账号，可以加我哦~如果有任何问题也可以给我发邮件到jack_gxy@126.com。欢迎进入iOS开发世界~
-我的项目经验我做过大大小小的App，上线的有7、8个了，我也是从一个小白慢">
+<meta property="og:description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
+如何封装，怎样调用。废话少说，先看看我都封装了什么。
+1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="项目分享">
-<meta name="twitter:description" content="这是小王爷的第一篇博客，首先简单的介绍一下我自己(此处有掌声)。我是一个iOS开发女攻城师。iOS编程大师和郭德纲都是我得男神(哈哈~)。有近4年iOS开发经验，现在在一家引以为豪的打车软件公司工作。我开通了微信公共账号，可以加我哦~如果有任何问题也可以给我发邮件到jack_gxy@126.com。欢迎进入iOS开发世界~
-我的项目经验我做过大大小小的App，上线的有7、8个了，我也是从一个小白慢">
+<meta name="twitter:title" content="封装思想，抽象一切">
+<meta name="twitter:description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
+如何封装，怎样调用。废话少说，先看看我都封装了什么。
+1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
   
     <link rel="alternative" href="/atom.xml" title="Hi iOS" type="application/atom+xml">
   
@@ -196,11 +199,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-项目分享" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-封装、抽象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/02/项目分享/" class="article-date">
-  	<time datetime="2015-04-02T03:30:57.000Z" itemprop="datePublished">2015-04-02</time>
+      <a href="/2015/05/19/封装、抽象/" class="article-date">
+  	<time datetime="2015-05-19T09:35:27.000Z" itemprop="datePublished">2015-05-19</time>
 </a>
     </div>
   
@@ -213,7 +216,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      项目分享
+      封装思想，抽象一切
     </h1>
   
 
@@ -233,38 +236,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是小王爷的第一篇博客，首先简单的介绍一下我自己(此处有掌声)。我是一个iOS开发女攻城师。iOS编程大师和郭德纲都是我得男神(哈哈~)。有近4年iOS开发经验，现在在一家引以为豪的打车软件公司工作。我开通了微信公共账号，可以加我哦~如果有任何问题也可以给我发邮件到jack_gxy@126.com。欢迎进入iOS开发世界~</p>
-<h2 id="我的项目经验">我的项目经验</h2><p>我做过大大小小的App，上线的有7、8个了，我也是从一个小白慢慢走过来的，中间也是障碍不断，今天根据开发经验大致的总结一下。</p>
-<h3 id="命名一定要规范">命名一定要规范</h3><h4 id="减少缩写">减少缩写</h4><pre><code>不要自创缩写命名，缩写只用于通用专业术语，如<span class="built_in">URL</span>等。宁可让名字长一些，团队中其他人容易理解。
-</code></pre><h4 id="过程化">过程化</h4><pre><code><span class="comment">将will，did，should将入命名中，会比较形象吧。</span>
-</code></pre><h4 id="前缀，前缀">前缀，前缀</h4><pre><code>类名加上工程缩写
-DDZMainViewController
-
-常量加类型名前缀
-<span class="built_in">UIApplicationDidFinishLaunchingNotification</span>
-
-枚举类型命名要加相关类名前缀，并且枚举值命名要加枚举类型前缀
-<span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DBDStriveBarStatus){
-
-DBDStriveBarStatusWaitStrive = <span class="number">0</span>,
-
-DBDStriveBarStatusWaitGoing
-
-};
-
-给一个带修饰的对象命名时要采用修饰+类型的方式，而不是先指定其类型
-<span class="built_in">UIButton</span> *sendMsgButton；
-</code></pre><h3 id="使用stroyboards，xib">使用stroyboards，xib</h3><pre><code>对使用storyboard、xib，还有只使用代码开发的争论一直不断，从我个人角度，我比较中意使用<span class="function"><span class="title">sb</span><span class="params">(只是缩写，没有其他意思)</span></span>，xib。比较简单的视图，我们可以使用sb，xib，简化我们的开发。而且自从iOS8开始，我们可以对其进行个性化扩展，真是其乐无穷了。
-</code></pre><h3 id="第三方控件使用Cocoapods管理">第三方控件使用Cocoapods管理</h3><pre><code>我自己的开发经验，还有和其他大牛牛们讨论过，很多知名的<span class="keyword">APP</span>都有使用Cocoapods，但是一些大公司会将第三方控件保存到自己的服务器中集中管理。
-</code></pre><h3 id="代码框架清晰">代码框架清晰</h3><pre><code>将Views，Model，Controllers，Resource，Network，Widges的文件夹建立的清晰一些，并且将成千上百的类分得明确一些。
-</code></pre><h3 id="Faux_Pas">Faux Pas</h3><pre><code>当我发现这个APP的时候，我马上更新了我的个性签名<span class="comment">--妈妈再也不用担心我的编程。</span>
-Faux Pas是一个强大的辅助编程工具，它可以找出常见的错误，隐藏的bug，不良的编程习惯以及可维护性问题和风格问题。
-</code></pre><h3 id="Debug">Debug</h3><pre><code>当程序崩溃的时候，我们希望快速定位到崩溃点，一般的方法是通过dSYM文件分析。
-现在我在贵公司发现了Crashlytics,它的原理其实就是根据dSYM文件出来，将物理内存翻译成代码展现给我们，并且个性化的操作可以及时通知。
-</code></pre><h3 id="公有Provisioning">公有Provisioning</h3><pre><code>我在之前的公司遇到这种情况，大家都是管理员身份，生成自己profie。每次更新完代码之后在setting中都要修改一下。后来我发现，大家建一个公共<span class="keyword">profile</span>比较方便，再也不用修改setting中得<span class="keyword">profile</span>，虽然更改起来不是很麻烦，但是只要是可以优化的方法，我们都要有常识的心态。
-</code></pre><h3 id="加注释">加注释</h3><pre><code>之前我的师傅经常和我说，加注释加注释。是因为我觉得很浪费时间，但是我发现别人的代码我真的需要一定时间来揣摩，大家是一个团队，你好我好大家好的原则，注释太重要了。猫神的VVDocumenter你还没有听说过吗？
-</code></pre><h3 id="每个类不要太冗余">每个类不要太冗余</h3><pre><code>我们被称为神一样存在的非主流iOS编程大师说过一句话，如果一个类超过300行，就该去面壁思过了，好吧~我之前的标准是500行，我和他的差距有200行那么多呀？！
-</code></pre><p>今天就和大家说这么多吧，大家可以关注我的公众账号，也可以随时给我发邮件。<br>如果你对iOS有编程热情，如果你是iOS编程殿堂级大神，如果你还有那么一丢丢的帅(这个可以忽略)，如果你也和我一样是编程女孩子，那我们做朋友吧~</p>
+        <p>我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。<br>你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。</p>
+<p>如何封装，怎样调用。废话少说，先看看我都封装了什么。</p>
+<p><strong>1.View视图中</strong><br>在view中添加其他控件的时候需要以view的frame作为参考。在编写代码的时候一会儿一个view.frame.size.width烦不烦，好~封装这些方法。</p>
+<ul>
+<li>首先创建一个Class为UIView的Category</li>
+<li>再h文件中声明一个类型为float的width的变量</li>
+<li>在m中实现其get和set方法</li>
+</ul>
+<blockquote>
+<p>-(CGFloat)width {<br>return self.frame.size.width;<br>}</p>
+<ul>
+<li>(void)setWidth:(CGFloat)width {<br>CGRect frame = self.frame;<br>frame.size.width = width;<br>self.frame = frame;<br>}</li>
+</ul>
+</blockquote>
+<ul>
+<li>万事具备，只差使用。在其他类中只要引用这个类名，那么self.someview.width就清飘飘的可以使用了</li>
+</ul>
+<p>介绍了width之后，我们还可以照猫画虎的实现很多方法，例如height，left，right，bottom，head等等。</p>
+<p><strong>2.safe判断</strong><br>有时会遇到这样的情况，自己生成的或者服务器返回的数据类型不正确，造成app崩溃。所以这些经验告诉我们，做一些数据格式的判断还是有必要的。</p>
+<ul>
+<li>(BOOL)isValidString:(NSString *)aString;</li>
+<li>(BOOL)isValidArray:(NSArray *)aArray;</li>
+<li>(BOOL)isValidDictionary:(NSDictionary *)aDictionary;</li>
+<li>(BOOL)isValidInteger:(NSInteger)count;</li>
+<li>(BOOL)isValidDistance:(NSString *)aDistance;</li>
+<li>(BOOL)isValidTime:(NSString *)aTime;</li>
+<li>(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</li>
+</ul>
+<p><strong>3.关于各式各样Alert View</strong></p>
+<p>Alert View作为端的友好提示是程序中不可获取的一小部分，根据不同的提示场景，Alert View肯定会有不同，至少分为成功提示、错误提示、二次确认提示等等。Alert View大部分都是custom出来的，分为title、icon、content、cancel title、other title等等。所以我们可以封装一个custom alert view，将alert view的显示动画、消失动画定义出来，但是它的title、content等等留给调用它的类决定，再定义一个枚举方法，定义我们业务所需的各种各样的view样式，在custom alert类中，根据样式来显示不同的image。基本想法就是这些了，看看是怎么实现的。</p>
+<ul>
+<li>首先创建一个custom view，这个view中有两大部分组成，一个显示内容view，一个是背景view。</li>
+<li>内容view中有title label，icon image，content label，cancel button， other button，还有一个block。</li>
+<li>在view中实现显示，消失的动画效果等等，还有定义各种情景的alert，实现不同情景下得icon显示内容。</li>
+</ul>
+<p>万事具备，只差调用，再h文件中写个调用的接口</p>
+<blockquote>
+<p>-(void)showAlertWithTitle:(NSString <em>)title<br>message:(NSString </em>)message<br>defaultMessage:(NSString <em>)message<br>completion:(CompletionBlock)completion<br>cancelTitle:(NSString </em>)cancelTitle<br>otherTitles:(NSString *)otherTitle;</p>
+</blockquote>
+<p>这里，我多写了一个default message，其中message是网络请求之后，接口返回的message显示数据，如果接口返回失败，则使用default message。</p>
+<p><strong>4.table view翻页功能</strong><br>基本任何app中都会遇到翻页需求，翻页就是给后台传基本参数外，还要传入当前请求页数和请求的条数。请求条数基本是个定值，但是页数是增加的，这也是有规律可循的，所以封装个方法配好翻页参数。<br>这个翻页的类要完成几个方法：上拉刷新、下拉加载更多和加载失败时的处理。</p>
+<ul>
+<li>(void)pullDownRefreshHandler:…</li>
+<li>(void)loadMoreHandler:…</li>
+<li>(void)finishRefreshWithError:(NSError *)error;</li>
+<li>(void)finishLoadMoreWithError;</li>
+</ul>
+<p>将翻页的功能交给这个类实现，不在请求中具体传入关于翻页的数据。<br><strong>5.网络请求封装</strong><br>大部分HTTP网络请求都是使用的AFNetwork吧，AF实在太好用，但是我们的需求是很多地方都要网络请求，在对AF进行一次封装太有必要。</p>
+<ul>
+<li>首先建一个HTTP请求类，将HTTP请求实现方法创建在此类中。将成功返回的数据和失败结果以block方式回调。</li>
+<li>各个controller有请求方法的时候创建其独有的Request Controller，在这个类中只需知道要传入什么参数，访问地址是什么即可，具体的HTTP请求方法则需之前的基类实现，看起来十分简单。</li>
+</ul>
+<p><code>+ (void)requestListWithDict:(NSDictionary *)dict completion:(completionBlock)completionBlock;</code></p>
+<ul>
+<li>接下来对应其ViewController直接调用这个方法即可，我们会发现这样的Request Controller会有很多个，因为它和ViewController中请求数对应，既容易查找也容易定位非常方便。</li>
+</ul>
+<p>这些封装方法都是我们经常使用到得，当然这几种是远远不够的，在我们自己的产品中会慢慢积累很多封装的方法，比如加密类、JSON解析类、策略类、地图类、提示文案类等等等等。而且在这篇文章中，大家发现我只是介绍了一种思想但是没有具体实现任何一个方法，其实方法实现已经非常简单了，重要的是每当我们coding的时候，有没有时时刻刻想到封装和抽象呢。<br>你在实际的编程中遇到哪些比较好的封装类呢，我希望你分享给我。</p>
 
       
     </div>
@@ -274,15 +302,11 @@ Faux Pas是一个强大的辅助编程工具，它可以找出常见的错误，
     
 <nav id="article-nav">
   
-    <a href="/2015/04/24/编程之快捷方式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          工欲善其事,必先利其器
-        
-      </div>
-    </a>
   
+    <a href="/2015/05/05/继续快捷方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">继续快捷方式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -309,7 +333,7 @@ Faux Pas是一个强大的辅助编程工具，它可以找出常见的错误，
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="项目分享" data-title="项目分享" data-url="http://blog.hiios.net/2015/04/02/项目分享/"></div>
+	<div class="ds-thread" data-thread-key="封装、抽象" data-title="封装思想，抽象一切" data-url="http://blog.hiios.net/2015/05/19/封装、抽象/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
