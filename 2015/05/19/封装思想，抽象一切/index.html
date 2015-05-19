@@ -245,10 +245,7 @@
 <li>在m中实现其get和set方法</li>
 </ul>
 <blockquote>
-<p>-(CGFloat)width {<br>return self.frame.size.width;<br>}</p>
-<ul>
-<li>(void)setWidth:(CGFloat)width {<br>CGRect frame = self.frame;<br>frame.size.width = width;<br>self.frame = frame;<br>}</li>
-</ul>
+<p>-(CGFloat)width {<br>return self.frame.size.width;<br>}<br>-(void)setWidth:(CGFloat)width {<br>CGRect frame = self.frame;<br>frame.size.width = width;<br>self.frame = frame;<br>}</p>
 </blockquote>
 <ul>
 <li>万事具备，只差使用。在其他类中只要引用这个类名，那么self.someview.width就清飘飘的可以使用了</li>
@@ -267,7 +264,7 @@
 </ul>
 <p>万事具备，只差调用，再h文件中写个调用的接口</p>
 <blockquote>
-<p>-(void)showAlertWithTitle:(NSString<em>)title message:(NSString</em>)message defaultMessage:(NSString<em>)message completion:(CompletionBlock)completion cancelTitle:(NSString</em>) otherTitles:(NSString*)otherTitle;</p>
+<p>-(void)showAlertWithTitle:(NSString <em>)title message:(NSString </em>)message defaultMessage:(NSString <em>)message completion:(CompletionBlock)completion cancelTitle:(NSString </em>) otherTitles:(NSString *)otherTitle;</p>
 </blockquote>
 <p>这里，我多写了一个default message，其中message是网络请求之后，接口返回的message显示数据，如果接口返回失败，则使用default message。</p>
 <p><strong>4.table view翻页功能</strong><br>基本任何app中都会遇到翻页需求，翻页就是给后台传基本参数外，还要传入当前请求页数和请求的条数。请求条数基本是个定值，但是页数是增加的，这也是有规律可循的，所以封装个方法配好翻页参数。<br>这个翻页的类要完成几个方法：上拉刷新、下拉加载更多和加载失败时的处理。</p>
@@ -284,7 +281,9 @@
 <li>首先建一个HTTP请求类，将HTTP请求实现方法创建在此类中。将成功返回的数据和失败结果以block方式回调。</li>
 <li>各个controller有请求方法的时候创建其独有的Request Controller，在这个类中只需知道要传入什么参数，访问地址是什么即可，具体的HTTP请求方法则需之前的基类实现，看起来十分简单。</li>
 </ul>
-<p><code>+(void)requestListWithDict:(NSDictionary*)dict completion:(completionBlock)completionBlock;</code></p>
+<blockquote>
+<p>-(void)requestListWithDict:(NSDictionary*)dict completion:(completionBlock)completionBlock;</p>
+</blockquote>
 <ul>
 <li>接下来对应其ViewController直接调用这个方法即可，我们会发现这样的Request Controller会有很多个，因为它和ViewController中请求数对应，既容易查找也容易定位非常方便。</li>
 </ul>
