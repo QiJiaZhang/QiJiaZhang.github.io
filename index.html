@@ -238,7 +238,7 @@
 <p>介绍了width之后，我们还可以照猫画虎的实现很多方法，例如height，left，right，bottom，head等等。</p>
 <p><strong>2.safe判断</strong><br>有时会遇到这样的情况，自己生成的或者服务器返回的数据类型不正确，造成app崩溃。所以这些经验告诉我们，做一些数据格式的判断还是有必要的。</p>
 <blockquote>
-<p>   -(BOOL)isValidString:(NSString <em>)aString;<br>-(BOOL)isValidArray:(NSString </em>)aArray;<br>-(BOOL)isValidDictionary:(NSDictionary <em>)aDictionary;<br>-(BOOL)isValidInteger:(NSInteger)count;<br>-(BOOL)isValidDistance:((NSString </em>)aDistance;<br>-(BOOL)isValidTime:(NSString *)aTime;<br>-(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</p>
+<p>   -(BOOL)isValidString:(NSString <em>)aString;<br>-(BOOL)isValidArray:(NSString </em>)aArray;<br>-(BOOL)isValidDictionary:(NSDictionary <em>)aDictionary;<br>-(BOOL)isValidInteger:(NSInteger)count;<br>-(BOOL)isValidDistance:(NSString </em>)aDistance;<br>-(BOOL)isValidTime:(NSString *)aTime;<br>-(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</p>
 </blockquote>
 <p><strong>3.关于各式各样Alert View</strong></p>
 <p>Alert View作为端的友好提示是程序中不可获取的一小部分，根据不同的提示场景，Alert View肯定会有不同，至少分为成功提示、错误提示、二次确认提示等等。Alert View大部分都是custom出来的，分为title、icon、content、cancel title、other title等等。所以我们可以封装一个custom alert view，将alert view的显示动画、消失动画定义出来，但是它的title、content等等留给调用它的类决定，再定义一个枚举方法，定义我们业务所需的各种各样的view样式，在custom alert类中，根据样式来显示不同的image。基本想法就是这些了，看看是怎么实现的。</p>
