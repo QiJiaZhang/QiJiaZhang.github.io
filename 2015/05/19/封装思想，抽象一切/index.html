@@ -10,7 +10,7 @@
 1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="封装思想，抽象一切">
-<meta property="og:url" content="http://blog.hiios.net/2015/05/19/封装、抽象/index.html">
+<meta property="og:url" content="http://blog.hiios.net/2015/05/19/封装思想，抽象一切/index.html">
 <meta property="og:site_name" content="Hi iOS">
 <meta property="og:description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
 如何封装，怎样调用。废话少说，先看看我都封装了什么。
@@ -199,10 +199,10 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-封装、抽象" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-封装思想，抽象一切" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/05/19/封装、抽象/" class="article-date">
+      <a href="/2015/05/19/封装思想，抽象一切/" class="article-date">
   	<time datetime="2015-05-19T09:35:27.000Z" itemprop="datePublished">2015-05-19</time>
 </a>
     </div>
@@ -255,15 +255,9 @@
 </ul>
 <p>介绍了width之后，我们还可以照猫画虎的实现很多方法，例如height，left，right，bottom，head等等。</p>
 <p><strong>2.safe判断</strong><br>有时会遇到这样的情况，自己生成的或者服务器返回的数据类型不正确，造成app崩溃。所以这些经验告诉我们，做一些数据格式的判断还是有必要的。</p>
-<ul>
-<li>(BOOL)isValidString:(NSString *)aString;</li>
-<li>(BOOL)isValidArray:(NSArray *)aArray;</li>
-<li>(BOOL)isValidDictionary:(NSDictionary *)aDictionary;</li>
-<li>(BOOL)isValidInteger:(NSInteger)count;</li>
-<li>(BOOL)isValidDistance:(NSString *)aDistance;</li>
-<li>(BOOL)isValidTime:(NSString *)aTime;</li>
-<li>(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</li>
-</ul>
+<blockquote>
+<p>   -(BOOL)isValidString:(NSString <em>)aString;<br>-(BOOL)isValidArray:(NSArray </em>)aArray;<br>-(BOOL)isValidDictionary:(NSDictionary <em>)aDictionary;<br>-(BOOL)isValidInteger:(NSInteger)count;<br>-(BOOL)isValidDistance:(NSString </em>)aDistance;<br>-(BOOL)isValidTime:(NSString *)aTime;<br>-(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</p>
+</blockquote>
 <p><strong>3.关于各式各样Alert View</strong></p>
 <p>Alert View作为端的友好提示是程序中不可获取的一小部分，根据不同的提示场景，Alert View肯定会有不同，至少分为成功提示、错误提示、二次确认提示等等。Alert View大部分都是custom出来的，分为title、icon、content、cancel title、other title等等。所以我们可以封装一个custom alert view，将alert view的显示动画、消失动画定义出来，但是它的title、content等等留给调用它的类决定，再定义一个枚举方法，定义我们业务所需的各种各样的view样式，在custom alert类中，根据样式来显示不同的image。基本想法就是这些了，看看是怎么实现的。</p>
 <ul>
@@ -273,22 +267,24 @@
 </ul>
 <p>万事具备，只差调用，再h文件中写个调用的接口</p>
 <blockquote>
-<p>-(void)showAlertWithTitle:(NSString <em>)title<br>message:(NSString </em>)message<br>defaultMessage:(NSString <em>)message<br>completion:(CompletionBlock)completion<br>cancelTitle:(NSString </em>)cancelTitle<br>otherTitles:(NSString *)otherTitle;</p>
+<p>-(void)showAlertWithTitle:(NSString<em>)title message:(NSString</em>)message defaultMessage:(NSString<em>)message completion:(CompletionBlock)completion cancelTitle:(NSString</em>) otherTitles:(NSString*)otherTitle;</p>
 </blockquote>
 <p>这里，我多写了一个default message，其中message是网络请求之后，接口返回的message显示数据，如果接口返回失败，则使用default message。</p>
 <p><strong>4.table view翻页功能</strong><br>基本任何app中都会遇到翻页需求，翻页就是给后台传基本参数外，还要传入当前请求页数和请求的条数。请求条数基本是个定值，但是页数是增加的，这也是有规律可循的，所以封装个方法配好翻页参数。<br>这个翻页的类要完成几个方法：上拉刷新、下拉加载更多和加载失败时的处理。</p>
+<blockquote>
+<p>-(void)pullDownRefreshHandler:…</p>
 <ul>
-<li>(void)pullDownRefreshHandler:…</li>
 <li>(void)loadMoreHandler:…</li>
 <li>(void)finishRefreshWithError:(NSError *)error;</li>
 <li>(void)finishLoadMoreWithError;</li>
 </ul>
+</blockquote>
 <p>将翻页的功能交给这个类实现，不在请求中具体传入关于翻页的数据。<br><strong>5.网络请求封装</strong><br>大部分HTTP网络请求都是使用的AFNetwork吧，AF实在太好用，但是我们的需求是很多地方都要网络请求，在对AF进行一次封装太有必要。</p>
 <ul>
 <li>首先建一个HTTP请求类，将HTTP请求实现方法创建在此类中。将成功返回的数据和失败结果以block方式回调。</li>
 <li>各个controller有请求方法的时候创建其独有的Request Controller，在这个类中只需知道要传入什么参数，访问地址是什么即可，具体的HTTP请求方法则需之前的基类实现，看起来十分简单。</li>
 </ul>
-<p><code>+ (void)requestListWithDict:(NSDictionary *)dict completion:(completionBlock)completionBlock;</code></p>
+<p><code>+(void)requestListWithDict:(NSDictionary*)dict completion:(completionBlock)completionBlock;</code></p>
 <ul>
 <li>接下来对应其ViewController直接调用这个方法即可，我们会发现这样的Request Controller会有很多个，因为它和ViewController中请求数对应，既容易查找也容易定位非常方便。</li>
 </ul>
@@ -333,7 +329,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="封装、抽象" data-title="封装思想，抽象一切" data-url="http://blog.hiios.net/2015/05/19/封装、抽象/"></div>
+	<div class="ds-thread" data-thread-key="封装思想，抽象一切" data-title="封装思想，抽象一切" data-url="http://blog.hiios.net/2015/05/19/封装思想，抽象一切/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
