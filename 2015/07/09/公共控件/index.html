@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>封装思想，抽象一切 | Hi iOS</title>
+  <title>公共控件 | Hi iOS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
-如何封装，怎样调用。废话少说，先看看我都封装了什么。
-1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
+  <meta name="description" content="刚刚接触移动端开发的时候，我们觉得使用苹果官方提供的20多种控件可以满足所以的需求，及时又不满足的时候也会想办法找到控件的设置方法尽量满足需求。但是随时项目变得日益庞大、需求变得复杂的时候，基本控件无法满足我们的需求，即使绞尽脑汁也找不到能满足需求的方法。这时候我们就需要自定义控件了，但是很多人一开始并不想自定义控件，这是为什么呢？我想可能是嫌麻烦，或者总觉得自己写的控件没有官方提供的好。但是我们">
 <meta property="og:type" content="article">
-<meta property="og:title" content="封装思想，抽象一切">
-<meta property="og:url" content="http://blog.hiios.net/2015/05/19/封装思想，抽象一切/index.html">
+<meta property="og:title" content="公共控件">
+<meta property="og:url" content="http://blog.hiios.net/2015/07/09/公共控件/index.html">
 <meta property="og:site_name" content="Hi iOS">
-<meta property="og:description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
-如何封装，怎样调用。废话少说，先看看我都封装了什么。
-1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
+<meta property="og:description" content="刚刚接触移动端开发的时候，我们觉得使用苹果官方提供的20多种控件可以满足所以的需求，及时又不满足的时候也会想办法找到控件的设置方法尽量满足需求。但是随时项目变得日益庞大、需求变得复杂的时候，基本控件无法满足我们的需求，即使绞尽脑汁也找不到能满足需求的方法。这时候我们就需要自定义控件了，但是很多人一开始并不想自定义控件，这是为什么呢？我想可能是嫌麻烦，或者总觉得自己写的控件没有官方提供的好。但是我们">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="封装思想，抽象一切">
-<meta name="twitter:description" content="我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。
-如何封装，怎样调用。废话少说，先看看我都封装了什么。
-1.View视图中在view中添加其他控件的时候需要以view的frame作为参考。在编写">
+<meta name="twitter:title" content="公共控件">
+<meta name="twitter:description" content="刚刚接触移动端开发的时候，我们觉得使用苹果官方提供的20多种控件可以满足所以的需求，及时又不满足的时候也会想办法找到控件的设置方法尽量满足需求。但是随时项目变得日益庞大、需求变得复杂的时候，基本控件无法满足我们的需求，即使绞尽脑汁也找不到能满足需求的方法。这时候我们就需要自定义控件了，但是很多人一开始并不想自定义控件，这是为什么呢？我想可能是嫌麻烦，或者总觉得自己写的控件没有官方提供的好。但是我们">
   
     <link rel="alternative" href="/atom.xml" title="Hi iOS" type="application/atom+xml">
   
@@ -199,11 +193,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-封装思想，抽象一切" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-公共控件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/05/19/封装思想，抽象一切/" class="article-date">
-  	<time datetime="2015-05-19T09:35:27.000Z" itemprop="datePublished">2015-05-19</time>
+      <a href="/2015/07/09/公共控件/" class="article-date">
+  	<time datetime="2015-07-09T12:27:16.000Z" itemprop="datePublished">2015-07-09</time>
 </a>
     </div>
   
@@ -216,7 +210,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      封装思想，抽象一切
+      公共控件
     </h1>
   
 
@@ -236,53 +230,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我不知道这样的命题符不符合我今天要分享的内容，大家看后评论。<br>你有没有在coding的时候遇到这样的情况，重复写一句或者一段代码，当遇到这种情况的时候，第一反应就是不将就，这样的重复代码不该出现再你的app中，马上应该封装个类或者方法，将这些方法抽象出来。</p>
-<p>如何封装，怎样调用。废话少说，先看看我都封装了什么。</p>
-<p><strong>1.View视图中</strong><br>在view中添加其他控件的时候需要以view的frame作为参考。在编写代码的时候一会儿一个view.frame.size.width烦不烦，好~封装这些方法。</p>
+        <p>刚刚接触移动端开发的时候，我们觉得使用苹果官方提供的20多种控件可以满足所以的需求，及时又不满足的时候也会想办法找到控件的设置方法尽量满足需求。但是随时项目变得日益庞大、需求变得复杂的时候，基本控件无法满足我们的需求，即使绞尽脑汁也找不到能满足需求的方法。这时候我们就需要自定义控件了，但是很多人一开始并不想自定义控件，这是为什么呢？我想可能是嫌麻烦，或者总觉得自己写的控件没有官方提供的好。但是我们不尝试着自己写怎么知道没有官方的好呢。<br>今天我们来谈谈自己如何制作符合特殊需求的自定义控件。<br>一、首先来点理论知识<br>1.制作控件之前，首先要考虑的是定义一个子类呢还是写个类别扩展。<br>根据要制作的控制复杂程度还有对子类和类别的了解，选择适合的制作方法。这里我们拿制作子类举例。<br>为了在应用的UI层可用，我们的控件必须继承UIView，我们可以注意到我们常用的UILabel、UIWebView等等都是继承UIView的，但是也有部门控件是继承于UIControl的，例如UIButton、UISwitch等，只不过UIControl类实现了target-action模式，并且有control state相关属性。但是UIControl也是继承于UIView的。<br>2.在h文件中添加默认属性<br>在h文件中添加属性，这样调用时就可以通过改变属性值变化UI式样。再m中初始化时对这些属性附默认值。<br>3.画图<br>画图有两种方式，一个是Images另一个是CoreGraphic。各有各的优缺点，但是从效率来说还是第二种比较强，如果你并不是很擅长使用代码绘制图还是改为一种。使用CoreGraphic绘制图在这里不再介绍，但是希望以后有机会做个这个专题分享，也是蛮有意思得课题。<br>4.交互逻辑<br>此时需要做的是将点击事件存储下来反馈到UI层。Layer层就是一个很好的存放这一逻辑得地方。但是这个也是可有可无得，具体看我们不同得产品设计是否再UI层得处理上要求得这儿精细。<br>5.万事具备，只差交互<br>如果设计得控件是继承于UIControl那么这些响应事件也许够用，但如果直接继承于UIView的话，我们需要自己添加一些响应touch得处理，方法有touch event、添加手势。<br>但是如何将touch事件传递出去，方法也有很多。例如NSNotification、KVO、Delegate、Target-action、Block。后三种用的是最多得，Target-action是需要集成UIControl才能使用。</p>
+<p>二、到了实战得时候<br>根据上面得理论知识我们来做一个自定义得搜索控件。<br>我将搜索控件分为两个部分，一个是输入关键字的搜索bar，一个是现实结果的table view。他们都是继承于UIView。</p>
+<p>typedef void (^ GetKeywordBlock)(NSString <em>keywork);<br>@interface CustomerSearchBar : UIView<br>/*</em></p>
 <ul>
-<li>首先创建一个Class为UIView的Category</li>
-<li>再h文件中声明一个类型为float的width的变量</li>
-<li>在m中实现其get和set方法</li>
+<li>搜索框中的place holder<br><em>/<br>@property (nonatomic, copy) NSString </em>hodler;<br>/**</li>
+<li>搜索框中的关键字<br><em>/<br>@property (nonatomic, copy) NSString </em>keyString;<br>/**</li>
+<li>搜索框关键字回调block<br>*/<br>@property (nonatomic, strong) GetKeywordBlock getKeywordBlock;</li>
 </ul>
-<blockquote>
-<p>-(CGFloat)width {<br>return self.frame.size.width;<br>}<br>-(void)setWidth:(CGFloat)width {<br>CGRect frame = self.frame;<br>frame.size.width = width;<br>self.frame = frame;<br>}</p>
-</blockquote>
 <ul>
-<li>万事具备，只差使用。在其他类中只要引用这个类名，那么self.someview.width就清飘飘的可以使用了</li>
+<li>(void)resignFirstResponder;</li>
 </ul>
-<p>介绍了width之后，我们还可以照猫画虎的实现很多方法，例如height，left，right，bottom，head等等。</p>
-<p><strong>2.safe判断</strong><br>有时会遇到这样的情况，自己生成的或者服务器返回的数据类型不正确，造成app崩溃。所以这些经验告诉我们，做一些数据格式的判断还是有必要的。</p>
-<blockquote>
-<p>   -(BOOL)isValidString:(NSString <em>)aString;<br>-(BOOL)isValidArray:(NSString </em>)aArray;<br>-(BOOL)isValidDictionary:(NSDictionary <em>)aDictionary;<br>-(BOOL)isValidInteger:(NSInteger)count;<br>-(BOOL)isValidDistance:(NSString </em>)aDistance;<br>-(BOOL)isValidTime:(NSString *)aTime;<br>-(BOOL)isValidCoor2D:(CLLocationCoordinate2D)aCoor2D;</p>
-</blockquote>
-<p><strong>3.关于各式各样Alert View</strong></p>
-<p>Alert View作为端的友好提示是程序中不可获取的一小部分，根据不同的提示场景，Alert View肯定会有不同，至少分为成功提示、错误提示、二次确认提示等等。Alert View大部分都是custom出来的，分为title、icon、content、cancel title、other title等等。所以我们可以封装一个custom alert view，将alert view的显示动画、消失动画定义出来，但是它的title、content等等留给调用它的类决定，再定义一个枚举方法，定义我们业务所需的各种各样的view样式，在custom alert类中，根据样式来显示不同的image。基本想法就是这些了，看看是怎么实现的。</p>
+<p>@end</p>
+<p>其中定义得block是将输入得关键字以block得形式传递给controller。我将最基本得功能参数写好后，也可以扩充一些UI的属性。</p>
+<p>@property(nonatomic)        BOOL                    ifShowBookmarkButton;<br>@property(nonatomic)        BOOL                    ifShowCancelButton;<br>@property(nonatomic,retain) UIColor <em>tintColor;<br>@property(nonatomic,retain) UIColor </em>barTintColor </p>
+<p>下面来看看m文件定义了哪些参数。</p>
+<h1 id="import_“CustomerSearchBar-h”">import “CustomerSearchBar.h”</h1><p>@interface CustomerSearchBar()<uitextfielddelegate><br>/**</uitextfielddelegate></p>
 <ul>
-<li>首先创建一个custom view，这个view中有两大部分组成，一个显示内容view，一个是背景view。</li>
-<li>内容view中有title label，icon image，content label，cancel button， other button，还有一个block。</li>
-<li>在view中实现显示，消失的动画效果等等，还有定义各种情景的alert，实现不同情景下得icon显示内容。</li>
+<li>搜索框中输入text field<br><em>/<br>@property (nonatomic, strong) UITextFiled </em>keyTextField;</li>
 </ul>
-<p>万事具备，只差调用，再h文件中写个调用的接口</p>
-<blockquote>
-<p>-(void)showAlertWithTitle:(NSString <em>)title message:(NSString </em>)message defaultMessage:(NSString <em>)message completion:(CompletionBlock)completion cancelTitle:(NSString </em>)otherTitles:(NSString *)otherTitle;</p>
-</blockquote>
-<p>这里，我多写了一个default message，其中message是网络请求之后，接口返回的message显示数据，如果接口返回失败，则使用default message。</p>
-<p><strong>4.table view翻页功能</strong><br>基本任何app中都会遇到翻页需求，翻页就是给后台传基本参数外，还要传入当前请求页数和请求的条数。请求条数基本是个定值，但是页数是增加的，这也是有规律可循的，所以封装个方法配好翻页参数。<br>这个翻页的类要完成几个方法：上拉刷新、下拉加载更多和加载失败时的处理。</p>
-<blockquote>
-<p>-(void)pullDownRefreshHandler:…<br>-(void)loadMoreHandler:…<br>-(void)finishRefreshWithError:(NSError *)error;<br>-(void)finishLoadMoreWithError;</p>
-</blockquote>
-<p>将翻页的功能交给这个类实现，不在请求中具体传入关于翻页的数据。<br><strong>5.网络请求封装</strong><br>大部分HTTP网络请求都是使用的AFNetwork吧，AF实在太好用，但是我们的需求是很多地方都要网络请求，在对AF进行一次封装太有必要。</p>
+<p>m文件中声明了一个text filed，用来输入text。也可以根据产品需求增加其他属性。m文件的实现不在叙述了，主要功能就是响应输入得事件，将输入的关键字传出来。</p>
+<p>Table view的实现也非常简单，即显示自定义得cell（根据PM的需求），table view data source和table view delegate我们也可以抽象一个类出来专门负责data source和delegate得处理。通过controller从bar中得到的关键字刷新data source。</p>
+<p>/**</p>
 <ul>
-<li>首先建一个HTTP请求类，将HTTP请求实现方法创建在此类中。将成功返回的数据和失败结果以block方式回调。</li>
-<li>各个controller有请求方法的时候创建其独有的Request Controller，在这个类中只需知道要传入什么参数，访问地址是什么即可，具体的HTTP请求方法则需之前的基类实现，看起来十分简单。</li>
+<li>@param keyword textfiled接收的关键字<br>*/</li>
 </ul>
-<blockquote>
-<p>-(void)requestListWithDict:(NSDictionary*)dict completion:(completionBlock)completionBlock;</p>
-</blockquote>
 <ul>
-<li>接下来对应其ViewController直接调用这个方法即可，我们会发现这样的Request Controller会有很多个，因为它和ViewController中请求数对应，既容易查找也容易定位非常方便。</li>
+<li>(void)showSuggestionDataResultWithKey:(NSString *)keyword{<br>//1.得到关键字<br>//2.根据关键字去得到新数据源——lists<br>//3.刷新table view</li>
 </ul>
-<p>这些封装方法都是我们经常使用到得，当然这几种是远远不够的，在我们自己的产品中会慢慢积累很多封装的方法，比如加密类、JSON解析类、策略类、地图类、提示文案类等等等等。而且在这篇文章中，大家发现我只是介绍了一种思想但是没有具体实现任何一个方法，其实方法实现已经非常简单了，重要的是每当我们coding的时候，有没有时时刻刻想到封装和抽象呢。<br>你在实际的编程中遇到哪些比较好的封装类呢，我希望你分享给我。</p>
+<p>self.suggestDataSource.dataArray = lists;<br>self.resultView.dataSource = self.suggestDataSource;<br>[self.resultView reloadData];<br>}</p>
+<p>最核心得思想大概就是这些了，可能大家觉得干货太好。但是我却认为重点不在这些，重点在于真正得动手去做一个控件在一个项目中，不要在使用苹果api中提供的。你还在使用navigation bar吗，你还在使用UIButton吗？还是自己动手做一个吧~</p>
 
       
     </div>
@@ -292,18 +269,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/09/公共控件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          公共控件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/05/05/继续快捷方式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">继续快捷方式</div>
+    <a href="/2015/05/19/封装思想，抽象一切/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">封装思想，抽象一切</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -332,7 +300,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="封装思想，抽象一切" data-title="封装思想，抽象一切" data-url="http://blog.hiios.net/2015/05/19/封装思想，抽象一切/"></div>
+	<div class="ds-thread" data-thread-key="公共控件" data-title="公共控件" data-url="http://blog.hiios.net/2015/07/09/公共控件/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
